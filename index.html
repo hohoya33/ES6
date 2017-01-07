@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>reveal.js - The HTML Presentation Framework</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <!-- <link rel="stylesheet" href="lib/css/monokai_sublime.css"> -->
+        <!-- <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css"> -->
+        <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+
+
+        <style type="text/css">
+        .reveal{font-size:24px}
+        .txl{text-align:left;display:inline-block}
+        </style>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <img src="img/js.png" alt="" style="max-width:20%">
+                    <h1>Introduction to ECMAScript 6ㆍ2015</h1>
+                    <p>2016. 12.</p>
+                    <p>IT 개발2팀 UI파트 - 김재호</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>ECMAScript 6 / ES2015 / 에크마?</h2>
+                        <a href="http://www.ecma-international.org/publications/standards/Standard.htm" target="_blank"><img src="img/Ecma_international_Logo.png" alt=""></a>
+
+                        <p>ecma인터내셔널의 ECMA-262 기술 규격에 정의된 표준화된 스크립트 프로그래밍 언어.</p>
+                        <p>쉽게 말해 JavaScript의 표준화된 버전.</p>
+                        <p>ES2015는 기존 버전(ES3, ES5)에 따라 ES6로 부르기도 했으나, <br>ES2016부터는 <strong>'해마다 표준이 추가됨'</strong>을 강조하고자<br> ES뒤에 해당 년도를 붙인 것만 정식 명칭.</p>
+
+                        <aside class="notes">
+                        우리가 흔히 JavaScript라고 부르는 언어는 Ecma 인터내셔널의 ECMA-262 기술 규격에 정의된 표준화된 스크립트 프로그래밍 언어.
+                        ECMAScript는 쉽게 말해 JavaScript의 표준화된 버전.
+
+                            버전을 매칭 하기에는 끝의 숫자가 하나씩 달라서 헷갈리던...
+                            자바스크립트는 넷스케이프에서 제작하였고 이를 Ecma 표준으로 등록하는 과정에서 이미 등록되어 있는 JAVA와 유사한 명칭으로 인해 ECMA-262라는 이름을 가지게 되었으며 이를 표준화한 것이 ECMAScript 입니다.
+
+                            브렌던 에이크(Brendan Eich)가 처음에는 모카(Mocha)라는 이름으로, 나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>History</h2>
+                        <p>ECMA-262는 지금까지 일곱 개의 판이 출시되었고, 현재 7 버전(2016년 6월)이 최신버전</p>
+                        <img src="img/javascript-myths-and-its-evolution-12-638.jpg" alt="" style="max-width:38%">
+                         <ul style="float:right;padding:10px 0 0 10px">
+                            <li><em>ECMAScript 1 :</em> 1997</li>
+                            <li><em>ECMAScript 2 :</em> 1998</li>
+                            <li><em>ECMAScript 3 :</em> 1999</li>
+                            <li><em>ECMAScript 4 :</em> 포기됨</li>
+                            <li><em>ECMAScript 5 :</em> 2009</li>
+                            <li><em>ECMAScript 6 :</em> 2015</li>
+                            <li><em>ECMAScript 2016(ES7) :</em> 2016</li>
+                            <li><em>ECMAScript 2017(ES8) :</em> 작업중(올해 중반)</li>
+                        </ul>
+                    </section>
+
+                    <aside class="notes">
+                        4 버전은 언어에 얽힌 정치적 차이로 인해 버려졌다. 이 판을 작업 가운데 일부는 5 버전을 이루는 기본이 되고 다른 일부는 ECMA스크립트의 기본을 이루고 있다.
+                    </aside>
+
+
+                    <section>
+                        <h2>ECMAScript 6의 새로운 기능들</h2>
+                        <!--
+                        <img src="img/1454335895es6-arrow-functions-new-fat-and-concise-syntax-in-js01-axel-rauschmayer-survey-favorite-es6-features.png" alt="">
+                        <p>Source: <a href="http://www.2ality.com/2015/07/favorite-es6-features.html">Axel Rauschmayer survey on favorite ES6 features</a></p> -->
+
+                        <p>let, const, Arrow Functions, Classes, Module system, Reflect, Promise, Proxy, Generators and iterators, Destructuring assignment, etc, ...</p>
+
+                        <img src="img/react.png" alt="" style="max-width:21.2%">
+                        <img src="img/angular2.png" alt="" style="max-width:20%">
+                        <p>이전 스크립트 버전과의 호환성, 복잡한 웹애플리케이션 개발 적합<br>더블어 React, Angular2 ES6 지원</p>
+                        <aside class="notes">
+                        설문 조사에 따르면 가장 인기있는 ES6 기능
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>ECMAScript 6 지원 현황</h2>
+                        <p>현재 Internet Explorer를 제외한 대부분의 브라우저가 표준을 지원하는 상황</p>
+                        <a href="https://kangax.github.io/compat-table/es6/" target="_blank"><img src="img/compat-table.png" alt=""></a>
+                        <p style="margin-top:0">Source: ES6기능 지원여부 호환성 표(칸자스)</p>
+                        <aside class="notes">
+                        기본적으로 지원현황을 잘 파악하고 사용
+                        node.js 크롬 파이폭스 엣지 상당부분 사용가능
+                        IE11의 ES6 지원율은 심히 안습이다.
+                        IE compiler 및 polyfill 사용필수
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>비호환 엔진에서 ECMAScript 6 사용</h2>
+
+                        <img src="img/babel.png" alt="" style="max-width:30%">
+
+                        <h3>트랜스파일러(transpiler)</h3>
+                        <ul>
+                            <li>ES6 문법으로 코드를 작성하더라도 ES5 소스코드로 변환</li>
+                            <li><a href="https://github.com/google/traceur-compiler" target="_blank">구글 트레이서</a>, <a href="https://babeljs.io/" target="_blank">바벨</a> 등 (깃헙 상태를 보면 바벨을 가장 많이 사용)</li>
+                        </ul>
+
+                        <h3 style="margin-top:40px">폴리필(polyfill)</h3>
+                        <ul>
+                            <li>비호환 엔진에 없는 코드의 기능을 지원하기 위해서 삽입하는 코드 조각. <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills#ecmascript" target="_blank">폴리필 목록</a></li>
+                        </ul>
+
+                        <aside class="notes">
+                        ES6 비호환 엔진에서 ES6 스크립트실행 트랜스파일러/폴리필 필요
+                        바벨을 쓴다고 해서 ES6의 모든 문법을 쓸 수 있는 것은 아닙니다.
+                        바벨 문서를 읽어보면 일부 기능들은 폴리필(Polyfill)을 불러와야 쓸 수 있다고 명시되어있죠.
+
+                        비호환 엔진에 없는 코드의 기능을 지원하기 위해서 삽입하는 코드 조각이다.
+                        그러나 ES6 모든 기능에 폴리필을 쓸 수 없는(만들 수 도 없는) 기능들이 존재한다. 폴리필 목록은 아래 링크에서 볼 수 있다.
+
+                        </aside>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>let, const</h2>
+                    </section>
+
+                    <section>
+                        <h2>let, const vs var</h2>
+                        <ul>
+                            <li><strong>let, const :</strong> block scope</li>
+                            <li><strong>var :</strong> function scope</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>함수 스코프 변수</h2>
+                        <ul>
+                            <li>var 키워드로 선언</li>
+                            <li>함수 밖에 선언 시, 전역범위로 스크립트 끝에서도 참조가능</li>
+                            <li>함수 안에 선언 시, 함수 밖을 제외한 내부 어디서든 접근가능</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>예기치 않은 결과</h2>
+                         <p>Why no ReferenceError?</p>
+                        <pre><code>
+    var a = 12; //전역 접근 가능
+
+    function myFunction() {
+        console.log(a); // -> 12
+        console.log(b); // -> undefined??
+
+        if(true) {
+            var b = 13;
+        } else {
+            var c = 14
+        }
+
+        console.log(c); // -> 14
+    }
+
+    myFunction();
+                        </code></pre>
+
+                        <aside class="notes">
+                        if문 밖에서도 변수 b는 접근 가능하지만 다른 언어에선 어림없는 소리, 타 언어 개발자는 b가 if문 밖에 있으니 undefined가 아니냐고 하겠지만
+                        실제로는 그렇지 않다.
+                        var은 hoisting 때문에 코딩할 때 예기치 못한 상황이 자주 발생했죠. 변수를 선언한 곳보다 더 위에서 해당 변수에 접근할 수 있는 경우가 있었습니다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Hoisting(호이스팅) 이란?</h2>
+                        <p>코드를 해석하기 전 var 선언 범위를 상단으로 이동 합니다.</p>
+                        <pre><code>
+    function myFunction() {
+        //var b, c; -> 변수는 호이스트 되었습니다.
+        console.log(b); // -> undefined
+
+        if(true) {
+            var b = 13; //b 값이 할당 되었습니다.
+        } else {
+            var c = 14
+        }
+
+        console.log(b); // -> 13
+        console.log(c); // -> 14
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+자바스크립트에는 호이스팅이라는 개념이 있습니다.
+이는 변수의 선언과 변수의 할당을 구분하겠다는 개념입니다.
+즉, 함수내의 선언된 어떤 위치의 변수든 함수의 최상단으로 끌어올려집니다.
+그리고는 undefined로 임의의 값을 할당합니다. 그리고 나중에 함수가 실행이 되면서 그 변수에 해당하는 값을 할당합니다.
+예를들어 보겠습니다.
+위 코드는 호이스팅을 설명하는 일반적인 코드입니다.
+위의 코드는 분명히 에러가 나야 하는 상황입니다.
+b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해서 사용했습니다. 그런데 에러는 나지 않습니다.
+즉 변수의 선언이 먼저되어 있음을 알수 있습니다. 할당은 그 이후에 해당 코드가 실행이 되면서 이뤄졌습니다.
+이 개념이 바로 자바스크립트에서의 호이스팅의 개념입니다.
+                        </aside>
+                    </section>
+
+
+
+                    <section>
+                        <h2>블록 스코프 변수</h2>
+                        <ul>
+                            <li>let, const 키워드로 선언</li>
+                            <li>함수 밖에 선언 시, 전역 접근 가능</li>
+                            <li>블록 안에 선언 시, 자신을 정의한 블록 또는 그 하위 블록에서만 접근 가능</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>let 변수 선언</h2>
+                        <p>변수 범위를 가장 가까운 블록으로 지정, 호이스팅하지 않습니다.<br>일시적 사각지대(Temporal Dead Zone; TDZ) 존재</p>
+                        <pre><code>
+    let a = 12; //전역 접근 가능
+
+    function myFunction() {
+        console.log(a); // -> 12
+        console.log(b); // -> ReferenceError: b is not defined
+
+        if(true) {
+            let b = 13; //if 불록 밖에서 접근 할 수 없음
+        } else {
+            let c = 14 //else 불록 밖에서 접근 할 수 없음
+        }
+
+        console.log(c); // -> ReferenceError: c is not defined
+    }
+
+    myFunction();
+                        </code></pre>
+
+                        <aside class="notes">
+                        그래서 블록 스코프를 변수를 생성하기 위해 let 키워드가 탄생
+                        let을 사용하면 변수가 각각의 if와 else 블록 안에 사용됩니다.
+                        이제 타 언어 개발자도 헷갈리지 않는 결과가 나옵니다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>for반복문 안에서 var 문제</h2>
+                        <ul>
+                            <li>var i는 함수 상단으로 끌어 올려지고 for loop 반복마다 공유됩니다.</li>
+                            <li>setTimeout 콜백이 호출되기 전 i는 각 반복마다 증가 됩니다.</li>
+                            <li>콜백이 실행되면 i는 for 반복문에서 할당 된 마지막 값을 보유합니다.</li>
+                        </ul>
+                        <pre><code>
+    function myFunction(){
+        //var i;
+        //for (i = 0; i < 5; i++) {
+
+        for (var i = 0; i < 5; i++) {
+            //콜백은 비동기이기 때문에 임의의 실행 전에, 반복문이 완료
+            setTimeout(function() {
+               console.log(i);
+            }, i * 1000);
+        }
+        // -> 예상하는 결과 0 1 2 3 4
+        // -> 5 5 5 5 5 예상과는 다르게 모든 반복에서 같은 값을 출력
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+                        전역 변수의 사용 억제
+                        JavaScript의 Function-level scope로 인한 문제를 회피하는 한 수단으로 클로저를 활용
+루프 + 비동기 범위 지정 문제 다음 루프는 콘솔에 무엇이 출력?
+0...4. 대신 숫자 출력 5, 5회
+이는 다양한 방법으로 ES5와 ES6에서 해결
+일어나는 이유를 간단히 살펴 보자.
+
+변수 i에서 for루프 초기화는 글로벌 범위
+콜백에 전달 setTimeout()이 글로벌 참조i
+콜백은 비동기이기 때문에 임의의 실행 전에, 루프가 완료
+
+콜백을 실행 할 때, for루프는 이미 전역 변수 증가했다 i값 (5)를 유지하는 단계
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>for반복문 안에서 let 사용</h2>
+                        <p>let은 for 반복문 안에서 공유되지 않고, 각 반복마다 새로운 변수가 생성됩니다.</p>
+                        <pre><code>
+    function myFunction(){
+        for (let i = 0; i < 5; i++) {
+            setTimeout( () => console.log(i), i * 1000 );
+        }
+
+        // -> 0 1 2 3 4
+        //각 반복에서 올바른 값을 출력
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>변수 재선언 시</h2>
+                        <p>let으로 선언된 변수는 다시 할당 할 수 있지만, <br>동일한 범위 내에서 다시 선언 할 수 없습니다.</p>
+                        <pre><code>
+    //ES5
+    var message = 'Hello';
+    var message = 'Goodbye';
+    console.log(message); // -> Goodbye
+
+    //ES6
+    let message = 'Hello';
+    let message = 'Goodbye'; //재선언은 허용되지 않음
+    //Uncaught SyntaxError: Identifier 'message' has already been declared
+
+    let message = 'Hello';
+    message = 'Goodbye'; //재할당 허용
+
+    let message = 'Hello';
+    function myFunction(){
+        let message = 'Goodbye'; //다른범위에서는 허용
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+                        다시 선언되지 못하게 합니다.
+                        같은 스코프에서 var로 선언한 변수를 다시 var로 선언하면 덮어쓴다.
+                        let로 선언한 변수를 다시 let로 선언하면 TypeError 예외가 발생
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>const 변수 선언 (상수)</h2>
+                        <ul>
+                            <li>일기전용 변수, 항상 초기값을 할당 해야합니다.</li>
+                            <li>값이 할당되면 새로운 값을 재할당 할 수 없습니다.</li>
+                        </ul>
+                        <pre><code>
+    //ES5
+    function loadProfiles(userNames){
+        //Magic Number. 3 그 자체로 명확한 의미를 알 수 없습니다.
+        if(userNames.length > 3){
+            //...
+        }
+    }
+
+    //ES6
+    function loadProfiles(userNames){
+        const MAX_REPLIES; //Uncaught SyntaxError: Missing initializer in const declaration
+        const MAX_USERS = 3;
+        MAX_USERS = 10; //Uncaught TypeError: Assignment to constant variable.
+
+        if(userNames.length > MAX_USERS){
+            //...
+        }
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+                        이전에는 변수명 앞에 어떤 문자열을 붙여 상수처럼 보이게 했다.
+                        const를 사용하면 절대 바꿔서는 안 되는 값을 실수로 변경 되는것을 예방 할 수 있다.
+                        상수값을 바꾸려하면 읽기 전용 예외가 난다.
+                        </aside>
+                    </section>
+
+                     <section>
+                        <h2>하지만 조심해야 할 점</h2>
+                        <p>const는 다시 대입하는 것만 막지,<br> 할당된 객체나 배열의 요소를 바꾸는 것은 막지 않습니다.</p>
+                        <pre><code>
+    //배열
+    const myArrary = [1, 2, 3];
+    myArrary[0] = 4;
+    console.log(myArrary); // -> [4, 2, 3]
+
+    //객체
+    const myObject = {name: 'Zero'};
+    myObject.name = 'One';
+    console.log(myObject); // -> {name: 'One'}
+
+    myObject = {}; //Uncaught TypeError: Assignment to constant variable
+                        </code></pre>
+
+                        <aside class="notes">
+                        즉, = 대입연산자를 통한 대입만 막은 거죠.
+                        변수 d는 객체의 주소, 즉 참조값을 담고 있으므로 불변값, 객체 자신은 얼마든지 변경가능
+                        다른 객체를 d에 할당하면 d값을 바꾸려는 시도라 예외가 발생
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>var, let 둘 중 어느 것을 사용해야 하나요?</h2>
+                        <p>ES6 코드라면 이제 let을 사용하세요. 사실상 var은 이제 사용할 일이 없습니다.</p>
+                        <ul>
+                            <li>변수에 새로운 값을 재할당 하려면 let</li>
+                            <li>변수에 새로운 값을 재할당 하지 않으려면 const</li>
+                        </ul>
+
+                        <aside class="notes">
+                        대부분의 경우 let과 const는 매우 유사하게 동작합니다.
+                        let 과 const는 가장 가까운 블록에 스코핑을 가집니다.
+                        기억도 잘 되고 코드를 읽기가 쉬우며, 스코프를 착각할 일이 줄고 끔찍한 버그를 일으킬 확률도 낮아진다.
+                        사실상 이제 var은 사용할 일이 없습니다. var의 기능은 let이 거의 다 하거든요.
+                        </aside>
+                    </section>
+
+                </section>
+
+                <section>
+                    <section>
+                        <h2>functions</h2>
+                    </section>
+
+                    <section>
+                        <h2>default parameter (파라미터 기본값)</h2>
+                        <p>parameter에 임의의 기본값을 지정할 수 있게 하는 새로운 방법을 제공합니다.</p>
+
+                        <pre><code>
+    //ES5
+    function myFunction(x, y, z){
+        x = typeof x !== 'undefined' ? x : 1;
+        y = typeof y !== 'undefined' ? y : 2;
+        z = typeof z !== 'undefined' ? z : 3;
+    }
+
+    //ES6
+    function myFunction(x = 1, y = 2, z = 3){ //파라미터 누락 시 기본값을 사용
+        console.log(x, y, z);
+    }
+
+    myFunction(6, 7); // -> 6, 7, 3
+                        </code></pre>
+
+                        <aside class="notes">
+                        전달된 각 parameter의 타입을 확인해서 전달받지 못한 놈은 미리 정해진 기본값을 지정해서 사용하는 패턴이 많이 쓰인다.
+
+                        type을 검사하므로써, 변수의 여부를 체크해서 기본값을 할당하는 직관적인 방법이다.
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>... rest parameter (나머지 파라미터)</h2>
+                        <p style="text-align:left">함수의 파라미터 수를 예상할 수 없을 경우에 유용합니다.<br>점(dot) 3개 이 후 파라미터 명을 설정하면 나머지 파라미터가 배열 객체로 넘어옵니다.</p>
+
+                        <pre><code>
+    //ES5
+    function myFunction(a, b) {
+        var args = Array.prototype.slice.call(arguments, myFunction.length);
+        console.log(args); // -> 3, 4, 5
+    }
+
+    //ES6
+    function myFunction(a, b, ...args) {
+        console.log(args); // -> 3, 4, 5
+    }
+
+    myFunction(1, 2, 3, 4, 5);
+                        </code></pre>
+
+                        <aside class="notes">
+                        arguments의 대체
+                        함수 파라미터에 일정하지 않은 값들을 넘기고자 할 경우에 유용
+                        ES5에서 함수 파라미터를 임의의 수를 받기를 원한다면 반드시 특별 변수인 arguments를 사용해야 합니다.
+                        </aside>
+                    </section>
+
+                     <section>
+                        <h2>arguments는 이제 그만</h2>
+                        <p>rest / default parameter는 arguments 객체를 대체하고<br> 좀 더 풍부하고 가독성 좋은 표현으로 자바스크립트 함수를 선언할 수 있게 합니다.</p>
+                    </section>
+
+
+                    <section>
+                        <h2>... spread operator (펼침 연산자)</h2>
+                        <p style="text-align:left">spread 연산자는 여러 파라미터(함수호출), 여러 요소(배열 리터럴) 예상되는 곳에 각각의 요소 값을 전달 합니다.</p>
+                        <pre><code>
+    function myFunction(a, b) {
+        return a + b;
+    }
+
+    //ES5
+    var data = [1, 4];
+    var sum = myFunction.apply(null, data); //배열을 함수 파라미터로 사용 시
+
+
+    //ES6
+    let data = [1, 4];
+    let sum = myFunction(...data);
+    //...data를 먼저 1, 4로 치환 -> myFunction함수 호출
+
+    console.log(sum); // -> 5
+                        </code></pre>
+
+                        <aside class="notes">
+                        배열을 apply()메서드를 통해 함수 파라미터로 변환합니다. ES6은 이 목적을 위해 펼침 연산자를 갖는다.
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>더 강력한 배열 리터럴 (펼침 연산자)</h2>
+                        <pre><code>
+    let arr1 = [1, 2];
+    let arr2 = [3];
+    let arr3 = [4, 5];
+
+    //여러 배열 병합
+    //ES5 – concat()
+    console.log(arr1.concat(arr2, arr3)); // -> [1, 2, 3, 4, 5]
+
+    //ES6
+    console.log([...arr1, ...arr2, ...arr3]); // -> [1, 2, 3, 4, 5]
+
+    //다른 배열에 밀어 넣기
+    //ES5 – apply()
+    arr1.push.apply(arr1, arr2);
+    console.log(arr1); // -> [1, 2, 3]
+
+    //ES6
+    arr1.push(...arr2);
+    console.log(arr1); // -> [1, 2, 3]
+                        </code></pre>
+
+                        <aside class="notes">
+                        push, splice, concat 등의 조합을 사용..
+                        펼침 연산자 구문은 훨씬 더 간결해집니다
+                        concat() 이라는 메소드(함수)에, 합쳐야 할 배열명을 넣어주면, 합친 결과를 반환합니다.
+                        </aside>
+
+                    </section>
+
+
+                    <section>
+                        <h2>arrow function (화살표 함수)</h2>
+                        <p>( 파라미터 ) => { 함수 본체 }</p>
+                        <p style="text-align:left">순수 함수로서의 기능만을 담당하기 위해 간소화한 함수, "=>" 좌측에는 parameter, 우측에는 return될 내용을 기입. 우측이 여러줄로 이루어져있다면 { }로 묶을 수 있습니다.</p>
+
+                        <pre><code>
+    //ES5
+    var addition = function(a, b) {
+        return a + b;
+    };
+
+    $('.button').click(function(e) {
+        //...
+    });
+
+    //ES6
+    let addition = (a, b) => a + b;
+
+    $('.button').click(e => {
+        //...
+    });
+                        </code></pre>
+
+                        <aside class="notes">
+                            화살표(arrow) 함수는 =>를 쓰는 표현식을 말하는데 function의 줄임 표현이다.
+                            한 줄일 경우는 {}을 사용하지 않고 자동 return 구문이 된다. 만일 여러 줄일 경우는 {} 으로 감싼다.
+                            화살표 함수에서 this는 해당 스코프의 this값과 같습니다.
+                            화살표 함수는 일반 function과는 달리 새로운 클로져(closure)를 형성하지 않아서 this의 의미가 더 직관적이다.
+                            const arr = [1, 2, 3];
+                            const squares = arr.map(x => x * x);
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>화살표 함수에서의 this</h2>
+                        <pre><code>
+    function Person() {
+        //Person() 생성자함수 'this' 정의
+        this.age = 0;
+
+        setInterval(function() {
+            //setInterval 'this'를 global에 정의
+            //Person() constructor에 선언된 this.age와 다른것입니다.
+            this.age++;
+        }, 1000);
+    }
+
+    var p = new Person(); //this.age는 NaN
+                        </code></pre>
+
+                        <aside class="notes">
+                            Arrow function 은 그저 축약을 위한것만이 아닙니다. this 바인딩과 밀접한 연관이 있습니다.
+                            Arrow function 에서의 this의 작동법은 이전과 다릅니다. 자바스크립트에서 각 function 은 정의 될때 마다,
+                            새로운 this를 가집니다. 하지만, Arrow 에서는 this를 context 영역에서 고유하게 가집니다.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>일반적으로 이 이슈를 this를 다른변수에 할당하는방법으로 해결</p>
+                        <pre><code>
+    function Person() {
+        var self = this;
+        self.age = 0;
+
+        setInterval(function() {
+            //콜백은 'self' 변수를 객체안에서 참조 합니다.
+            self.age++;
+        }, 1000);
+    }
+
+    var p = new Person(); //이제 this.age는 올바르게 증가합니다.
+                        </code></pre>
+
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                    <section>
+                        <pre><code>
+    //ES6
+    function Person() {
+        this.age = 0;
+
+        setInterval(() => {
+            this.age++; //'this'는 Person의 객체를 제대로 참조합니다.
+        }, 1000);
+    }
+
+    var p = new Person(); //this.age는 올바르게 증가합니다.
+                        </code></pre>
+
+                        <aside class="notes">
+                        </aside>
+                    </section>
+
+                     <section>
+                        <h2>화살표 함수와 일반 함수의 차이점</h2>
+                        <p>화살표 함수는 객체 생성자로 사용할 수 없습니다.<br>즉, new 연산자를 쓰지 못합니다.</p>
+                    </section>
+
+
+                </section>
+
+                 <section>
+                    <section><h2>destructuring assignment</h2></section>
+
+                    <section>
+                        <h2>배열 해체 할당</h2>
+                        <pre class="vertical"><code>
+    //ES5
+    var myArray = [1, 2, 3];
+    var a = myArrary[0];
+    var b = myArrary[1];
+    var c = myArrary[2];
+
+    console.log(a); //1
+    console.log(b); //2
+    console.log(c); //3
+                        </code></pre>
+
+                        <pre class="vertical"><code>
+    //ES6
+    let myArray = [1, 2, 3];
+    let [a, b, c] = myArray;
+
+
+
+    console.log(a); //1
+    console.log(b); //2
+    console.log(c); //3
+                        </code></pre>
+                        <aside class="notes">
+                            <p>배열 혹은 객체를 해체하여 각각 변수에 할당한다.</p>
+                            단순희 배열 값을 하나씩 뽑아 a,b,c에 할당
+                            배열 해체할당을 사용하면, 변수의 값에 쉽게 배열의 값을 할당할 수 있습니다.
+                            할당문 좌변에는 할당할 변수를 배열 형식으로, 우변은 데이터를 가져올 배열을 놓습니다.
+                            이를 더 짧게 적으면, let [a, b, c] = [1, 2, 3]으로 표현할 수 있습니다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>객체 해체 할당</h2>
+                        <pre class="vertical"><code>
+    //ES5
+    var user = {
+            'name': '민호',
+            'age' : 23
+        };
+
+    var name = user.name;
+    var age = user.age;
+
+
+
+    console.log(name); //민호
+    console.log(age); //23
+                        </code></pre>
+                        <pre class="vertical"><code>
+    //ES6
+    let user = {
+            'name': '민호',
+            'age' : 23
+        };
+
+    let {name, age} = user;
+
+    //다른 변수명 사용 시
+    let {name: x, age: y} = user;
+
+    console.log(x); //민호
+    console.log(y); //23
+                        </code></pre>
+                        <aside class="notes">
+                            객체 프로퍼티 값을 다른 변수에 할당하려면 이 방법뿐이었습니다.
+                            객체 해체 할당은 객체 프로퍼티 값을 추출해서 변수에 할당합니다.
+                            좌변에는 리터럴 방식으로 할당할 변수를 열거하고, 우변은 객체를 놓은 뒤 전체를 ()로 감쌉니다.
+                            객체 프로퍼티명과 변수명은 반드시 같아야 합니다. 물론, 달리하는 방법도 있습니다.
+                            한 줄 표현 ()로 전체를 감싸지 않아도 된다.
+                            let {name: x, age: y} = {'name': '민호', 'age': 23};
+                        </aside>
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <section><h2>collections</h2></section>
+
+                    <section>
+                        <h2>Map</h2>
+                        <ul>
+                            <li>key-value 쌍으로 이루어진 자료구조</li>
+                            <li>key들은 중복될 수 없으며, 하나의 키에 하나의 value값</li>
+                        </ul>
+                        <pre><code>
+    //ES5
+    var settings = {};
+    settings.server = 'http://localhost';
+    settings['language'] = 'EN';
+
+    //ES6
+    let data = new Map();
+
+    data.set('key', 100);
+    data.set(666, true);
+    data.set(undefined, 'some text');
+
+    data.size; //3
+    data.has('keys'); //false
+    data.get('key'); //100
+    data.has(undefined); //true
+    data.delete(undefined);
+    data.has(undefined); //false
+                        </code></pre>
+
+                        <aside class="notes">
+                        Maps는 key-value 쌍으로 이루어진 자료구조이다.
+                        key들은 중복될 수 없으며, 하나의 키에 하나의 value만 올 수 있다.
+                        map 객체에 값을 할당할 때에는 set 메소드를, 값을 추출할 때는 get 메소드를 사용하여 접근한다.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Set</h2>
+                        <ul>
+                            <li>Set과 배열은 유사하지만 배열의 경우 중복된 값을 허락, Set은 그렇지 않습니다.</li>
+                        </ul>
+
+                        <pre><code>
+    let data = new Set();
+
+    data.add(3);
+    data.add(7);
+
+    data.size; //2
+    data.has(3); //true
+    data.has(9); //false
+
+    data.delete(3);
+    data.has(3); //false
+                        </code></pre>
+
+                        <aside class="notes">
+                        Set 객체는 중복을 제거하는데 좋습니다.
+                        Array와의 비교를 통해서 접근하면 이해가 쉬울 것이다.
+                        array는 중복된 값을 허락하지만 set은 그렇지 않다.
+                        set 에 이미 존재하는 값을 추가하려고 시도하면, 아무런 일도 일어나지 않습니다.
+                        array와 마찬가지로 object, primitive data type 모두 값으로 할당할 수 있다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>강력한 for-of 루프</h2>
+                        <ul>
+                            <li>for–in 루프 구문은 객체의 속성들을 순회하기 위한 구문</li>
+                            <li>for–of 루프 구문은 배열의 요소들, 즉 data를 순회하기 위한 구문</li>
+                        </ul>
+
+                        <pre><code>
+    let tage = ['#404fest', '#wstdays', '#dconf'];
+
+    //ES5 배열을 루프로 순회하기
+    for (var i = 0; i < tage.length; i++) {
+
+    }
+    tage.forEach(function (value) {
+        //break, return 구문을 사용해 함수를 벗어날 수 없는 단점
+    });
+
+    for (let tag in tags) {
+        //루프의 순회 순서가 무작위라는 단점
+        console.log(tag); //0, 1, 2
+    }
+
+    //ES6
+    for (let tag of tags) {
+        console.log(tag); //'#404fest', '#wstdays', '#dconf'
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+for–in 구문은 일반 Object의 문자열 키(key)를 순회하기 위해 만들어진 문법입니다. Array를 다루는데는 그다지 유용하지 않습니다.
+                        </aside>
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <section><h2>template literals</h2></section>
+
+                    <section>
+                        <h2>템플릿 문자열</h2>
+                        <ul>
+                            <li>템플릿 문자열은 문자열을 쉽게 다루도록 도와주는 문법</li>
+                            <li>+ 연산자를 사용하지 않아도 간단한 방법으로 문자열에 새로운 문자열을 삽입 가능</li>
+                        </ul>
+
+                        <pre><code>
+    let a = 20;
+    let b = 10;
+    let c = '자바스크립트';
+
+    //ES5
+    var str = '나는 ' + (a + b) + '살이고' + c + '를 좋아해';
+
+    //ES6
+    let str = '나는 ${a + b}살이고 ${c}를 좋아해';
+
+    console.log(str); // -> 나는 30살이고 자바스크립트를 좋아해
+                        </code></pre>
+
+                        <aside class="notes">
+                        템플릿 대입문은 큰 따옴표, 작은 따옴표 대신 역 따옴표(back-tick)로 묶고, 코드는 달러 기호와 중괄호로 묶습니다.
+                        템플릿 대입문(template substitution)이라 한다.
+                        템플릿 대입문에는 문자열뿐만아니라 모든 JavaScript 표현식이 사용될 수 있다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>여러 줄 문자열</h2>
+                        <ul>
+                            <li>‘ 또는 “ 같은 따옴표 문자 대신 ` 백틱(backtick)문자를 사용</li>
+                            <li>줄바꿈과 들여쓰기 등 템플릿 문자열 속의 모든 white-space들은 있는 그대로 포함</li>
+                        </ul>
+
+                        <pre><code>
+    //ES5
+    console.log('1\n2\n3\n');
+
+    //ES6
+    console.log(`1
+    2
+    3`);
+    //1
+    //2
+    //3
+
+    $("#warning").html(`
+        &lt;h1>Watch out!&lt;/h1&gt;
+        &lt;p&gt;Unauthorized hockeying can result in penalties
+        of up to ${maxPenalty} minutes.&lt;/p&gt;
+    `);
+                        </code></pre>
+
+                        <aside class="notes">
+                        일반 문자열과 비슷해 보이지만,
+                        템플릿 문자열에는 줄 바꿈 문자(\n)를 사용할 필요 없이 줄 바꿈이 포함됩니다.
+                        </aside>
+                    </section>
+
+                </section>
+
+
+                <section>
+                    <section><h2>classes</h2></section>
+
+                    <section>
+                        <h2>객체지향 자바스크립트</h2>
+                        <p>일반적인 javascript 캡슐화 방법은 생성자 함수를 사용합니다.</p>
+
+                        <pre><code>
+    function SponsorWidget(name, description, url){
+        this.name = name;
+        this.description = description;
+        this.url = url;
+    }
+
+    SponsorWidget.prototype.render = function(){
+        //...
+    };
+
+    //SponsorWidget 함수호출
+    var sponsorWidget = new SponsorWidget(name, description, url);
+    sponsorWidget.render();
+                        </code></pre>
+
+                        <aside class="notes">
+                        생성자를 만들고 상속을 다루는 훨씬 간결하고 단정한 구문
+                        생성자/프로토타입기반의 상속구문과 클래스 구문 비교
+                        Javascript는 프로토타입 기반(prototype-based) 객체지향형 언어다.
+                        비록 다른 객체지향 언어들과의 차이점에 대한 논쟁들이 있긴 하지만, Javascript는 강력한 객체지향 프로그래밍 능력들을 지니고 있다.
+                        프로토타입 기반 프로그래밍은 클래스가 존재하지 않는 객체지향 프로그래밍 스타일로 프로토타입 체인과 클로저 등으로 객체 지향 언어의 상속, 캡슐화(정보 은닉) 등의 개념을 구현할 수 있다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Class 다루기</h2>
+                        <p>class를 선언하기 위해서는 class 키워드를 사용합니다.</p>
+
+                        <pre><code>
+    class SponsorWidget {
+        //클래스 본문
+        constructor() {
+            //...
+        }
+
+        //클래스의 인스턴스 메소드 정의
+        render(){
+            //...
+        }
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>생성자 함수 값 초기화</h2>
+                         <ul>
+                            <li>constructor 메소드는 class로 생성된 객체를 생성하고 초기화 위한 특수한 메소드</li>
+                            <li>constructor 메소드는 클래스 내에 하나만 존재</li>
+                        </ul>
+
+                        <pre><code>
+    class SponsorWidget {
+        //new 연산자로 생성된 새로운 인스턴스가 있을 때 마다 실행 됩니다.
+        constructor(name, description, url){
+            //인스턴스 변수에 할당하면 다른 인스턴스 메소드에서 사용 가능
+            this.name = name;
+            this.description = description;
+            this.url
+        }
+
+        render(){
+            //...
+        }
+    }
+
+    //new 연산자를 사용하지 않고 객체를 생성하면 에러가 발생
+    let sponsorWidget = new SponsorWidget(name, description, url);
+    sponsorWidget.render();
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>클래스에서 인스턴스 변수 접근</h2>
+                        <ul>
+                            <li>constructor 메소드에 설정된 인스턴스 변수는 클래스의 모든 인스턴스 메소드에서 <br>사용가능합니다.</li>
+                            <li>this를 이용해 인스턴스 변수 속성, 메소드에 접근</li>
+                        </ul>
+                        <pre><code>
+    class SponsorWidget {
+        constructor(name, description, url){
+            //...
+            this.url = url;
+        }
+
+        render(){
+            let link = this._buildLink(this.url);
+            //이전에 할당한 인스턴스 변수(this.url)를 사용
+        }
+
+        _buildLink(url){ //메소드 앞에 밑줄이 있으면 내부에서만 사용 규칙
+            //...
+        }
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>클래스의 인스턴스 만들기</h2>
+                        <p style="text-align:left">ES6의 Class가 새로운 객체지향 모델을 제공하는 것은 아닙니다. 기존 생성자 함수를 대신해 만들 수 있는 편리한 구문(Syntax sugar) 입니다.</p>
+
+                        <pre><code>
+    //Syntactic Sugar
+    class SponsorWidget {
+        //...
+    }
+
+    //Prototype Object Model
+    function SponsorWidget(name, description, url){
+        //...
+    }
+
+
+    //인스턴스는 같은 방식으로 생성됩니다.
+    let sponsorWidget = new SponsorWidget(name, description, url);
+    sponsorWidget.render();
+
+    console.log(typeof SponsorWidget); //function
+                        </code></pre>
+
+                        <aside class="notes">
+                       ES6의 Class가 새로운 객체지향 모델을 제공하는 것이 아니며 Class도 사실 함수이고 기존 prototype 기반 패턴의 Syntax sugar일 뿐이다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>extends 클래스 상속</h2>
+                        <ul>
+                        <li>extends 키워드는 메소드와 속성을 상속받는 다른 class를 만드는데 사용됩니다.</li>
+                        <li>super 메소드는 Parent Class의 constructor 메소드를 실행합니다.</li>
+                        </ul>
+                        <pre><code>
+    class Widget { //Parent Class
+        constructor(){
+            this.baseCSS = 'site-widget';
+        }
+        parse(value){
+            //...
+        }
+    }
+    class SponsorWidget extends Widget { //Child Class
+        constructor(name, description, url){
+            super();
+            //파생 클래스에서 super() 함수가 먼저 호출되어야
+            //'this' 키워드를 사용가능 그렇지 않을 경우 참조오류 발생
+            this.name = 'Square';
+        }
+        render(){
+            let parsedName = this.parse(this.name); //Parent메소드 상속
+            let css = this._buildCSS(this.baseCSS); //Parent속성 상속
+        }
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+                        상속이란 자식 클래스(서브 클래스)에서 부모 클래스(슈퍼 클래스)의 필드와 메소드를 참조하여 쓸 수 있게 해준다.
+                        함수의 상속 계층 구현은 쉬운일이 아닙니다.
+
+                        클래스 constructor메소드에서 부모클래스 constructor 호출
+                        크래스 메소드 내부에서 부모클래스 정적/비정적 메소드를 참조
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>상속된 메소드 재정의</h2>
+                        <p>Child class는 super 객체를 통해 Parent Class 메소드를 호출 할 수 있습니다.</p>
+
+                        <pre><code>
+    class Widget { //Parent Class
+        constructor(){
+            this.baseCSS = 'site-widget';
+        }
+        parse(value){
+            //...
+        }
+    }
+    class SponsorWidget extends Widget { //Child Class
+        constructor(name, description, url){
+            super();
+        }
+        parse(){
+            //Parent Class의 parse() 메소드 호출
+            let parsedName = super.parse(this.name);
+            return `Sponsor: ${parsedName}`;
+        }
+        render(){
+            //...
+        }
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+                        super 키워드는 부모 객체의 메소드를 호출하는데 사용
+                        </aside>
+                    </section>
+
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>modules - part I</h2>
+                         <aside class="notes">
+                            모듈러 프로그밍은 사용빈도가 높은 중요한 소프트웨어 디자인 기법
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Global Namespace를 오염시키는..</h2>
+                        <p>코드 모듈화하는 일반적인 방법으로 전역변수를 사용합니다.<br> 이로인해 예기치 않은 문제점들이 발생할 가능성이 높아집니다.</p>
+
+                        <pre style="margin-bottom:0"><em class="file_name">index.html</em><code>
+    &lt;!DOCTYPE&nbsp;html&gt;
+    &lt;body&gt;
+    &lt;script src="./jquery.js"&gt;&lt;/script&gt;
+    &lt;script src="./underscore.js"&gt;&lt;/script&gt;
+    &lt;script src="./flash-message.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+                        </code></pre>
+                        <pre style="margin-top:0"><code>
+    let element = $("...").find(...);
+    let filtered = _.each(...);
+    flashMessage("Hello");
+
+    //라이브러리들이 Global Namespace에 추가
+    //전역변수 사용으로 인해
+    //네이밍이 충돌 될 수 있는 잠재적인 요소들이 발생 할 수 있습니다.
+                        </code></pre>
+
+                        <aside class="notes">
+                        비동기 모듈정의 AMD
+                        모듈러 프로그래밍 프로그램과 라이브러리를 모듈 단위로 잘개 나누는 행위
+                        자바스크립트 모듈 객체, 함수기타 콤포넌트를 함께 말아넣은 콜렉션
+                        코드를 여러모듈로 분리 깔끔하게 기획하고 조직화
+                        각자 자신의 스코프를 가지므로 전역변수 사용을 줄이고 그로 인한 문제점을 예방
+                        코드 재사용성이 좋아진다.
+                        특정 모듈에 버그가 한정 되므로 디버깅이 쉽다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>모듈 생성</h2>
+                        <p>export 키워드를 사용해 모듈을 외부로 보낼 수 있습니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    //flash messages를 표시하기 위한 모듈 생성합니다.
+    export default function(message){
+        alert(message);
+    }
+    //default type export는 하나의 함수를 내보내는 방법입니다.
+                        </code></pre>
+
+                        <aside class="notes">
+                        기본 익스포트가 변수 한 개만 익스포트할 때 쓰는 반면, 명명된 익스포트는 변수 여럿을 익스포트하기 위해 사용
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>default export - 모듈 가져오기</h2>
+                        <ul>
+                        <li>모듈을 가져오려면 import키워드를 사용합니다.</li>
+                        <li>내용을 저정할 로컬변수를 지정하고</li>
+                        <li>from 키워드를 사용하여 모듈이 위치한 경로를 작성합니다.</li>
+                        </ul>
+
+                        <pre><em class="file_name">app.js</em><code>
+    import flashMessage from './flash-message'; //.js파일확장자는 생략
+    flashMessage('Hello');
+    //default export로 보내면 이름을 지정할 수 있습니다.
+                        </code></pre>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export default function(message){
+        alert(message);
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>모듈 코드 실행</h2>
+                        <p style="text-align:left">모듈은 이전과 같이 script태그를 통해 가져옵니다. 그러나 더 이상 전역 네임스페이스가 오염되지않습니다.</p>
+
+                        <pre><em class="file_name">index.html</em><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;body&gt;
+    &lt;script src="./flash-message.js"&gt;&lt;/script&gt;
+    &lt;script src="./app.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+                        </code></pre>
+
+                        <div><img src="img/alert_1.png" alt=""></div>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>default export - 여러 함수를 내보낼 수 없음</h2>
+                        <p>default export는 모듈에서 내보낼 수 있는 함수의 수를 제한합니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export default function(message){
+        alert(message);
+    }
+
+    function consoleMessage(message){
+        console.log(message);
+    }
+
+    //consoleMessage 함수는 모듈 외부에서 사용할 수 없습니다.
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>named export - 내보내기</h2>
+                        <p>단일 모듈에서 여러 함수를 내 보내려면 named(명명된) Export를 사용할 수 있습니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export function alertMessage(message){
+        alert(message);
+    }
+
+    export function consoleMessage(message){
+        console.log(message);
+    }
+
+    //export뒤에 default type을 사용하지 않습니다.
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>named export - 가져오기</h2>
+                        <p>named(명명된) export 함수 이름과 동일한 이름을 변수로 중괄호 안에 묶어야합니다.</p>
+
+                        <pre><em class="file_name">app.js</em><code>
+    import { alertMessage, consoleMessage } from './flash-message';
+
+    alertMessage('Hello from alert');
+    consoleMessage('Hello from log');
+                        </code></pre>
+
+                        <p style="text-align:left">함수이름이 일치해야합니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export function alertMessage(message){
+        alert(message);
+    }
+
+    export function consoleMessage(message){
+        console.log(message);
+    }
+                        </code></pre>
+
+                         <div style="position:absolute;top:330px;right:0px"><img src="img/alert_2.png" alt=""></div>
+                         <div style="position:absolute;top:500px;right:0px"><img src="img/alert_3.png" alt=""></div>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>모듈을 객체로 가져오기</h2>
+                        <p>전체 모듈을 객체로 가져와서 객체의 속성으로 호출할 수 있습니다.</p>
+
+                        <pre><em class="file_name">app.js</em><code>
+    import * as flash from './flash-message';
+
+    flash.alertMessage('Hello from alert');
+    flash.consoleMessage('Hello from log');
+                        </code></pre>
+
+                        <p style="text-align:left">함수가 객체 속성이됩니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export function alertMessage(message){
+        alert(message);
+    }
+
+    export function consoleMessage(message){
+        console.log(message);
+    }
+                        </code></pre>
+
+                         <div style="position:absolute;top:330px;right:0px"><img src="img/alert_2.png" alt=""></div>
+                         <div style="position:absolute;top:500px;right:0px"><img src="img/alert_3.png" alt=""></div>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>반복되는 export 제거</h2>
+                        <p>함수를 외부로 보낼 때마다 export 명령문을 사용합니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export function alertMessage(message){
+        alert(message);
+    }
+
+    export function consoleMessage(message){
+        console.log(message);
+    }
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+.
+                    <section>
+                        <h2>한 번에 여러 함수 내보내기</h2>
+                        <p>여러 함수를 중괄호에 묶어서 한 번에 외부로 보낼 수 있습니다</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    function alertMessage(message){
+        alert(message);
+    }
+
+    function consoleMessage(message){
+        console.log(message);
+    }
+    export { alertMessage, consoleMessage }
+    //중괄호 안에 여러 함수 이름을 작성 할 수 있습니다.
+                        </code></pre>
+
+                        <pre><em class="file_name">app.js</em><code>
+    //이전과 마찬가지로 가져옵니다.
+    import { alertMessage, consoleMessage } from './flash-message';
+
+    alertMessage('Hello from alert');
+    consoleMessage('Hello from log');
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                </section>
+
+
+
+                <section>
+                    <section>
+                        <h2>modules - part II</h2>
+                    </section>
+
+                    <section>
+                        <h2>하드코딩된 상수 추출</h2>
+                        <p>응용프로그램에서 상수를 재정의 하는 것은 불필요한 반복이고,<br> 버그로 이어질 수 있습니다.</p>
+                    </section>
+
+
+                    <section>
+                        <pre style="margin:0 auto"><em class="file_name">load-profiles.js</em><code>
+    function loadProfiles(userNames){
+        const MAX_USERS = 3; //상수를 정의합니다.
+        if(userNames.length > MAX_USERS){
+            //...
+        }
+        const MAX_REPLIES = 3;
+        if(someElement > MAX_REPLIES){
+            //...
+        }
+    }
+    export { loadProfiles }
+                        </code></pre>
+
+                        <pre class="vertical"><em class="file_name">list-replies.js</em><code>
+    function listReplies(replies=[]){
+      const MAX_REPLIES = 3;
+      //그리고 다른곳에도 다시 정의 합니다.
+      if(replies.length > MAX_REPLIES){
+        //...
+      }
+    }
+    export { listReplies }
+                        </code></pre>
+
+                        <pre class="vertical"><em class="file_name">display-watchers.js</em><code>
+    function displayWatchers(watchers=[]){
+      const MAX_USERS = 3;
+
+      if(watchers.length > MAX_USERS){
+        //...
+      }
+    }
+    export { displayWatchers }
+                        </code></pre>
+
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>상수 내보내기</h2>
+                        <p>모듈에 상수를 배치하면 다른 모듈에서 재사용 할 수 있습니다.</p>
+
+                        <pre><em class="file_name">constants.js</em><code>
+   /*
+    export const MAX_USERS = 3;
+    export const MAX_REPLIES = 3;
+    */
+
+    const MAX_USERS = 3;
+    const MAX_REPLIES = 3;
+
+    export { MAX_USERS, MAX_REPLIES };
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>상수를 가져오는 방법</h2>
+                        <p>상수를 가져오려면, 함수를 가져올 때와 같은 구문을 사용할 수 있습니다.</p>
+
+                        <pre><em class="file_name">load-profiles.js</em><code>
+    import { MAX_REPLIES, MAX_USERS } from './constants';
+
+    function loadProfiles(userNames){
+        if(userNames.length > MAX_USERS){
+            //...
+        }
+        if(someElement > MAX_REPLIES){
+            //...
+        }
+    }
+                        </code></pre>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>상수 가져오기</h2>
+                        <p>이제 응용프로그램의 다른 파일에서도 상수를 가져와서 사용할 수 있습니다.</p>
+                        <pre><em class="file_name">list-replies.js</em><code>
+    import { MAX_REPLIES } from './constants';
+
+    function listReplies(replies = []){
+        if(replies.length > MAX_REPLIES){
+            //...
+        }
+    }
+                        </code></pre>
+
+                        <pre><em class="file_name">display-watchers.js</em><code>
+    import { MAX_USERS } from './constants';
+
+    function displayWatchers(watchers = []){
+        if(watchers.length > MAX_USERS){
+            //...
+        }
+    }
+                        </code></pre>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>default export - 클래스 모듈 내보내기</h2>
+                        <p>클래스도 함수와 동일한 구문을 사용하여 모듈에서 내보낼 수 있습니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    //default는 이 클래스를 가져온 후 어떤 변수 이름으로도 사용 할 수 있습니다.
+    export default class FlashMessage {
+        constructor(message){
+            this.message = message;
+        }
+
+        renderAlert(){
+            alert(`${this.message} from alert`);
+        }
+
+        renderConsole(){
+            console.log(`${this.message} from log`);
+        }
+    }
+                        </code></pre>
+                        <aside class="notes">
+                        2개의 개별 함수 대신에, 이제 클래스의 일부인 2개의 인스턴스 메소드가 있습니다.
+                        </aside>
+                    </section>
+
+
+                    <section>
+                        <h2>default export - 클래스 모듈 사용</h2>
+                        <p style="text-align:left">가져온 클래스는 import를 사용하여 변수에 할당되고, 새로운  인스턴스를 만드는 데 사용할 수 있습니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    export default class FlashMessage {
+        //...
+    }
+                        </code></pre>
+
+                        <pre><em class="file_name">app.js</em><code>
+    import FlashMessage from './flash-message';
+
+    //인스턴스를 생성하고, 인스턴스 메소드를 호출합니다.
+    let flash = new FlashMessage('Hello');
+    flash.renderAlert();
+    flash.renderConsole();
+                        </code></pre>
+
+                        <div style="position:absolute;top:330px;right:0px"><img src="img/alert_4.png" alt=""></div>
+                        <div style="position:absolute;top:530px;right:0px"><img src="img/alert_5.png" alt=""></div>
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>named export - 클래스 모듈 내보내기</h2>
+                        <p style="text-align:left">클래스를 내보내는 또 다른 방법으로 <br>클래스를 먼저 정의한 다음, 중괄호 안에 클래스 이름과 함께 export를 사용합니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    class FlashMessage { //일반적인 클래스 선언
+        constructor(message){
+            this.message = message;
+        }
+
+        renderAlert(){
+            alert(`${this.message} from alert`);
+        }
+
+        renderLog(){
+            console.log(`${this.message} from log`);
+        }
+    }
+
+    export { FlashMessage } //외부로 클래스를 보냅니다.
+                        </code></pre>
+
+                        <aside class="notes">
+
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>named export - 클래스 모듈 사용</h2>
+                        <p style="text-align:left">마찬가지로 named(명명된) export를 사용할 때는<br> 클래스 이름과 동일한 이름을 변수로 중괄호 안에 묶어야합니다.</p>
+
+                        <pre><em class="file_name">flash-message.js</em><code>
+    class FlashMessage {
+        //...
+    }
+    export { FlashMessage }
+                        </code></pre>
+<p style="text-align:left">중괄호 안에 이름 일치</p>
+                        <pre><em class="file_name">app.js</em><code>
+    import { FlashMessage } from './flash-message';
+
+    let flash = new FlashMessage("Hello");
+    flash.renderAlert();
+    flash.renderLog();
+    //이전과 동일한 결과
+                        </code></pre>
+
+                        <div style="position:absolute;top:330px;right:0px"><img src="img/alert_4.png" alt=""></div>
+                        <div style="position:absolute;top:540px;right:0px"><img src="img/alert_5.png" alt=""></div>
+                        <aside class="notes">
+                        이제 ES6모듈을 이용하여 자바스크립트 애플리케이션을 제작할 수 있을 것입니다.
+                        </aside>
+                    </section>
+                </section>
+
+
+                 <section>
+                    <section><h2>promise</h2></section>
+
+                    <section>
+                        <h2>이전의 비동기식 프로그래밍 구현 방법</h2>
+                        <p>callback hell</p>
+
+                        <pre><code>
+    async1(function(input, result1) {
+        async2(function(result2) {
+            async3(function(result3) {
+                async4(function(result4) {
+                    async5(function(output) {
+                        // do something with output
+                    });
+                });
+            });
+        });
+    });
+                        </code></pre>
+
+                        <aside class="notes">
+                        중첩된 함수 호출을 따라가야 하므로 가독성이 현저히 떨어진다.
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>promise 선언</h2>
+                        <p>Promise는 기본적으로 생성자를 통해서 만들 수 있습니다.</p>
+
+                        <pre><code>
+    var _promise = function (param) {
+        return new Promise(function (resolve, reject) {
+            //비동기를 표현하기 위해 setTimeout 함수를 사용
+            window.setTimeout(function () {
+                //처리가 끝나면 resolve 또는 reject를 부른다.
+                if (param) {
+                    //해결됨
+                    resolve("해결 완료");
+                } else {
+                    //실패
+                    reject(Error("실패!!"));
+                }
+            }, 3000);
+        });
+    };
+                        </code></pre>
+
+                        <aside class="notes">
+                        이벤트 콜백 패턴의 골칫거리를 한번에 해소
+                        비동기 코드를 쉽게 작성할 수 있도록 Promise를 표준 라이브러리에 도입하였습니다.
+                        이벤트의 순차적 실행 또는 애니메이션의 순차적 진행
+
+                        resolve(성공)콜백과 reject(실패)콜백, 두 파라미터를 가지며, 작업이 성공하면 resolve콜백, 시패하면 reject콜백 실행
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>promise 실행</h2>
+                        <p>promise then() 메소드에는 resolve(성공) / reject(실패) 처리 이후 수행할 작업</p>
+                        <pre><code>
+    _promise(true).then(function (text) {
+        //성공시
+        console.log(text);
+    }, function (error) {
+        //실패시
+        console.error(error);
+    }).catch(function(){
+        //에러/예외만 처리
+    });
+                        </code></pre>
+
+                        <aside class="notes">
+                        new에 의해 생성 된 promise 객체는 promise 값을 resolve (성공) / reject (실패) 할 때 불리는 콜백 함수를 등록하기 위해 _promise.then()라는 인스턴스 메서드가 있습니다.
+                        </aside>
+                    </section>
+
+
+
+                </section>
+
+                 <section>
+                    <section><h2>generators</h2></section>
+
+                    <section>
+                        <h2>generators</h2>
+                        <ul>
+                        <li>제너레이터는 한번에 하나씩 여러 값을 반환하는 함수</li>
+                        <li>function* 으로 표기</li>
+                        <li>next()메소드 실행 시 yield키워드를 만나면 바로 중지하고 yield된 값을 반환</li>
+                        <li>그리고 다시 next()메소드를 부르면 멈춘 지점부터 실행 다음 yield된 값 반환</li>
+                        <li>제너레이터 함수에 더 이상 yield할 값이 남아있지 않으면 done프로퍼티는 true</li>
+                        </ul>
+
+                        <pre><code>
+    function* generatorFunction() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+
+    let generator = generatorFunction();
+    console.log(generator.next().value); //1
+    console.log(generator.next().value); //2
+    console.log(generator.next().value); //3
+    console.log(generator.next().done);  //true
+                        </code></pre>
+
+                    </section>
+                </section>
+
+
+
+                <section>
+                    <h1>“튜닝의 끝은 순정이다”</h1>
+
+                    <p>by. <a href="http://vanilla-js.com/" target="_blank">Vanilla JS</a></p>
+
+                    <p>기본의 충실함. 라이브러리와 프레임워크를 지나치게 의존해 기본을 무시하고 있는 개발자들에게 일침을 가하는 일종의 유머? 속임수 같은 것</p>
+
+                    <aside class="notes">
+                    프레임워크와 라이브러리의 사용이 잘못되었음을 지적하는 것이 아닌
+                    간단한 페이지를 만드는 데도 jQuery가 없으면 아무런 개발을 하지 못하거나 또는 React, Angular를 사용하면 모든것이 해결 될 것이라는 생각이 퍼지면서 극단적으로는 프론트 개발자라는 느낌보다는 jQuery개발자, Angular개발자, React개발자가 되어버리는게 아닌가 라는 생각이 듭니다.
+                    위와같은 현상의 반대 급부로 등장하는것이 바로 Vanilla JS 입니다.
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>감사합니다.</h1>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+            Reveal.addEventListener( 'slidechanged', function(event) {
+                // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+                var notes = event.currentSlide.querySelector(".notes");
+                if(notes) {
+                    console.info(notes.innerHTML.replace(/\n\s+/g,'\n'));
+                }
+            });
+        </script>
+    </body>
+</html>
