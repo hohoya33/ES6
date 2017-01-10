@@ -58,27 +58,20 @@
                         <a href="http://www.ecma-international.org/publications/standards/Standard.htm" target="_blank"><img src="img/Ecma_international_Logo.png" alt=""></a>
 
                         <p>ecma인터내셔널의 ECMA-262 기술 규격에 정의된 표준화된 스크립트 프로그래밍 언어.</p>
-                        <p>JavaScript의 기초를 이루는 스크립트 언어.</p>
-                        <p>ES2015는 기존 버전(ES3, ES5)에 따라 ES6로 부르기도 했으나, <br>ES2016부터는 <strong>'해마다 표준이 추가됨'</strong>을 강조하고자<br> ES뒤에 해당 년도를 붙인 것만 정식 명칭.</p>
+                        <p>즉, JavaScript의 표준화된 버전.</p>
+                        <p>ECMAScript 뒤에 숫자 버전을 의미하고, 다른 하나는 출시된 연도를 의미.</p>
+                        <p>ES2016부터는 <strong>'해마다 표준이 추가됨'</strong>을 강조하고자<br> ES뒤에 해당 년도를 붙인 것만 정식 명칭.</p>
 
                         <aside class="notes">
 우리가 흔히 JavaScript라고 부르는 언어는 Ecma 인터내셔널의 ECMA-262 기술 규격에 정의된 표준화된 스크립트 프로그래밍 언어.
 
-ECMAScript에 여러 부가적인 요소를 덧붙인 것이 JavaScript 이다.
 ECMAScript 를 기반으로 하는 언어는 JavaScript 만 있는 것은 아니고, 예전 MicroSoft 사의 JScript 나 Adobe의 Action Script 등이 있다.
-
-같은 수많은 용어들이 사용되었는데요, 다시 정리를 해 보겠습니다.
-ECMAScript의 표준 ECMA-262의 6번째 에디션을 의미
-
-ECMAScript 표준의 6번째 에디션(줄여서 ES6) ECMAScript 뒤에 숫자 버전을 의미하고, 다른 하나는 출시된 연도를 의미
-
-버전을 매칭 하기에는 끝의 숫자가 하나씩 달라서 헷갈리던...
                         </aside>
                     </section>
 
                     <section>
                         <h2>History</h2>
-                        <p>ECMA-262는 지금까지 일곱 개의 판이 출시되었고, 현재 7 버전(2016년 6월)이 최신버전</p>
+                        <p>현재 ECMA-262는 ECMAScript 2016 버전(2016년 6월)이 최신버전.</p>
                         <img src="img/javascript-myths-and-its-evolution-12-638.jpg" alt="" style="max-width:38%">
                          <ul style="float:right;padding:10px 0 0 10px">
                             <li><em>ECMAScript 1 :</em> 1997</li>
@@ -86,16 +79,28 @@ ECMAScript 표준의 6번째 에디션(줄여서 ES6) ECMAScript 뒤에 숫자 �
                             <li><em>ECMAScript 3 :</em> 1999</li>
                             <li><em>ECMAScript 4 :</em> 포기됨</li>
                             <li><em>ECMAScript 5 :</em> 2009 (현재 가장 많이 사용)</li>
-                            <li><em>ECMAScript 6 :</em> 2015</li>
+                            <li><em>ECMAScript 6 :</em> 2015 (가장 큰 기능 상의 변화)</li>
                             <li><em>ECMAScript 2016(ES7) :</em> 2016</li>
                             <li><em>ECMAScript 2017(ES8) :</em> 작업중(올해 중반)</li>
                         </ul>
                     </section>
 
                     <aside class="notes">
+
+
+ECMA International 에서는 지속적으로 언어 규격을 변화시키고 발전시키려 노력했고 그 결과로 4번째 판을 제안하게 되었지만 많은 반대에 부딪혀 흐지부지되고 만다.
+ECMAScript 에디션 4를 위해 아주 많은 작업들이 진행됐습니다.
+하지만 에디션 4에는 모호한 구석이 너무 많았기 때문에 폐기됐습니다.
+
+10년만인 2009년 출시된 ECMAScript 5(ES5)는 HTML5와 함께 출현한 표준안이다.
+
+ES5에서 ES6로의 버전업이 가장 큰 기능 상의 변화가 있었고
+ES6는 당신의 JS 코드 작성 방식을 바꿀 것입니다.
+이후의 버전업은 작은 기능의 추가 레벨로 매년 공개할 것으로 예고되었다.
+
+
 JavaScript는 넷스케이프에 탑재하기 위해 개발된 언어였다.
 브렌던 에이크(Brendan Eich)가 10일안에 만드는 조건으로 입사한뒤 언어 개발에 착수했다.
-
 처음에는 모카(Mocha)라는 이름으로, 나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다.
 
 마이크로소프트도 이런 시류에 편승하여 Internet Explorer 3.0에 JScript가 개발되어 탑재
@@ -104,8 +109,8 @@ JavaScript는 넷스케이프에 탑재하기 위해 개발된 언어였다.
 그 이후 ECMAScript 표준을 따르는 JavaScript 표준이 제안되기 시작
 
 ECMA International 에서는 지속적으로 언어 규격을 변화시키고 발전시키려 노력했고 그 결과로 4번째 판을 제안하게 되었지만 많은 반대에 부딪혀 흐지부지되고 만다.
-
-ECMAScript 에디션 4를 위해 아주 많은 작업들이 진행됐습니다. – 하지만 에디션 4에는 모호한 구석이 너무 많았기 때문에 폐기됐습니다.
+ECMAScript 에디션 4를 위해 아주 많은 작업들이 진행됐습니다.
+하지만 에디션 4에는 모호한 구석이 너무 많았기 때문에 폐기됐습니다.
 
 
 4판의 규격에는 JavaScript의 본질과 많이 다른 이질적인 느낌의 특성을 다수 도입하는 내용
@@ -113,12 +118,6 @@ ECMAScript 에디션 4를 위해 아주 많은 작업들이 진행됐습니다. 
 이 변화 내용에 대해서 더글라스 크락포드 등의 유명한 JavaScript 관련 프로그래머들은 강하게 반발했으며 ECMAScript 4에 제동
 
 
-지금까지 JS 언어에 있었던 업그레이드 중에서 가장 중요한 혁신입니다.
-ES6는 당신의 JS 코드 작성 방식을 바꿀 것입니다.
-
-ES5에서 ES6로의 버전업이 가장 큰 기능 상의 변화가 있었고 이후의 버전업은 작은 기능의 추가 레벨로 매년 공개할 것으로 예고되었다.
-
-이후 1999년 ECMAScript 3(ES3)이 공개되었고 10년만인 2009년 출시된 ECMAScript 5(ES5)는 HTML5와 함께 출현한 표준안이다.
                     </aside>
 
 
@@ -129,11 +128,12 @@ ES5에서 ES6로의 버전업이 가장 큰 기능 상의 변화가 있었고 �
 
                         <img src="img/react.png" alt="" style="max-width:21.2%">
                         <img src="img/angular2.png" alt="" style="max-width:20%">
-                        <p>기존 스크립트 버전과의 호환성, 복잡한 웹애플리케이션 개발 적합<br>더블어 React, Angular2 ES6 지원</p>
+                        <p>기존 스크립트 버전의 호환성, 복잡한 웹애플리케이션 개발에 적합한 기능.<br>더블어 React, Angular2 ES6 지원.</p>
 
                         <aside class="notes">
                         사실 주요 브라우저들이 벌써 ES6 기능들을 일부 지원하고 있구요 기존에 JS 코드도 잘 동작합니다.
                         ES6는 기존 코드와 최대한 호환되도록 설계되었구요 클래스와 모듈 같은 복잡한 응용 프로그램을 작성하기 위한 새로운 문법이 추가 되었습니다.
+                        트랜드나 선택이 아니라 필수로 자리매김 하는 분위기
                         </aside>
                     </section>
 
@@ -166,14 +166,13 @@ ES5에서 ES6로의 버전업이 가장 큰 기능 상의 변화가 있었고 �
                         </ul>
 
                         <aside class="notes">
-
 크로스 브라우징을 염두해 트랜스파이일러, 폴리필을 사용해서  ES6 문법을 사용할 수 있습니다.
 IE에서는 트랜스파이일러 및 폴리필 사용필수입니다.
 
 트랜스파일러란, ES6 문법 코드를 ES5코드로 변환해서 지금 사용 중인 브라우저에서도 사용할 수 있게 변환하는 도구입니다.
 바벨을 쓴다고 해서 ES6의 모든 문법을 쓸 수 있는 것은 아닙니다.
-바벨 문서를 읽어보면 일부 기능들은 폴리필(Polyfill)을 불러와야 쓸 수 있다고 명시되어있죠.
 
+바벨 문서를 읽어보면 일부 기능들은 폴리필(Polyfill)을 불러와야 쓸 수 있다고 명시되어있죠.
 폴리필 역시 특정 기능이 지원되지 않는 브라우저를 위해 사용할 수 있는 코드 조각입니다.
                         </aside>
                     </section>
@@ -224,9 +223,12 @@ IE에서는 트랜스파이일러 및 폴리필 사용필수입니다.
                         </code></pre>
 
                         <aside class="notes">
-if문 밖에서도 변수 b는 접근 가능하지만 다른 언어에선 어림없는 소리, 타 언어 개발자는 b가 if문 밖에 있으니 undefined가 아니냐고 하겠지만
-실제로는 그렇지 않다.
-var은 hoisting 때문에 코딩할 때 예기치 못한 상황이 자주 발생했죠. 변수를 선언한 곳보다 더 위에서 해당 변수에 접근할 수 있는 경우가 있었습니다.
+var를 통한 변수 선언시 예기치 않은 결과가 발생할 수 있습니다.
+if문 밖에서도 변수 b는 접근 가능하지만 다른 언어에선 어림없는 소리
+변수를 선언한 곳보다 더 위에서 해당 변수에 접근할 수 있는 경우가 있었습니다.
+
+다음에 나올 호이스팅 개념을 이해하면 유연하다
+타언어 개발자들은 허술하다 부실하다 라고 자바스크립트를 낮게 평가하는 경향
                         </aside>
                     </section>
 
@@ -250,15 +252,15 @@ var은 hoisting 때문에 코딩할 때 예기치 못한 상황이 자주 발생
                         </code></pre>
 
                         <aside class="notes">
-자바스크립트에는 호이스팅이라는 개념이 있습니다.
-이는 변수의 선언과 변수의 할당을 구분하겠다는 개념입니다.
+변수의 선언과 변수의 할당을 구분하겠다는 개념입니다.
 즉, 함수내의 선언된 어떤 위치의 변수든 함수의 최상단으로 끌어올려집니다.
-그리고는 undefined로 임의의 값을 할당합니다. 그리고 나중에 함수가 실행이 되면서 그 변수에 해당하는 값을 할당합니다.
-예를들어 보겠습니다.
-위 코드는 호이스팅을 설명하는 일반적인 코드입니다.
+그리고는 undefined로 임의의 값을 할당합니다.
+그리고 나중에 함수가 실행이 되면서 그 변수에 해당하는 값을 할당합니다.
+
 위의 코드는 분명히 에러가 나야 하는 상황입니다.
 b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해서 사용했습니다. 그런데 에러는 나지 않습니다.
-즉 변수의 선언이 먼저되어 있음을 알수 있습니다. 할당은 그 이후에 해당 코드가 실행이 되면서 이뤄졌습니다.
+즉 변수의 선언이 먼저되어 있음을 알수 있습니다.
+할당은 그 이후에 해당 코드가 실행이 되면서 이뤄졌습니다.
 이 개념이 바로 자바스크립트에서의 호이스팅의 개념입니다.
                         </aside>
                     </section>
@@ -327,15 +329,11 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
                         </code></pre>
 
                         <aside class="notes">
-루프 + 비동기 범위 지정 문제 다음 루프는 콘솔에 무엇이 출력?
-0...4. 대신 숫자 출력 5, 5회
-이는 다양한 방법으로 ES5와 ES6에서 해결
-일어나는 이유를 간단히 살펴 보자.
+루프안에서 비동기 범위 지정 문제 입니다.
 
 변수 i에서 for루프 초기화는 글로벌 범위
 콜백에 전달 setTimeout()이 글로벌 참조i
 콜백은 비동기이기 때문에 임의의 실행 전에, 루프가 완료
-
 콜백을 실행 할 때, for루프는 이미 전역 변수 증가했다 i값 (5)를 유지하는 단계
                         </aside>
                     </section>
@@ -382,9 +380,7 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
                         </code></pre>
 
                         <aside class="notes">
-                        다시 선언되지 못하게 합니다.
-                        같은 스코프에서 var로 선언한 변수를 다시 var로 선언하면 덮어쓴다.
-                        let로 선언한 변수를 다시 let로 선언하면 TypeError 예외가 발생
+같은 스코프에서 var로 선언한 변수를 다시 var로 선언하면 덮어씁니다.
                         </aside>
                     </section>
 
@@ -471,7 +467,7 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
 
                     <section>
                         <h2>default parameter (파라미터 기본값)</h2>
-                        <p>parameter에 임의의 기본값을 지정할 수 있게 하는 새로운 방법을 제공합니다.</p>
+                        <p>parameter에 임의의 기본값을 지정할 수 있게 하는 새로운 방법을 제공.</p>
 
                         <pre><code>
     //ES5
@@ -490,16 +486,14 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
                         </code></pre>
 
                         <aside class="notes">
-                        전달된 각 parameter의 타입을 확인해서 전달받지 못한 놈은 미리 정해진 기본값을 지정해서 사용하는 패턴이 많이 쓰인다.
-
-                        type을 검사하므로써, 변수의 여부를 체크해서 기본값을 할당하는 직관적인 방법이다.
+                        전달된 각 parameter의 타입을 확인해서 전달받지 못한 파라미터를 미리 정해진 기본값을 지정해서 사용하는 패턴이 많이 쓰인다.
                         </aside>
                     </section>
 
 
                     <section>
                         <h2>... rest parameter (나머지 파라미터)</h2>
-                        <p style="text-align:left">함수의 파라미터 수를 예상할 수 없을 경우에 유용합니다.<br>점(dot) 3개 이 후 파라미터 명을 설정하면 나머지 파라미터가 배열 객체로 넘어옵니다.</p>
+                        <p style="text-align:left">함수의 파라미터 수를 예상할 수 없을 경우에 유용.<br>점(dot) 3개 이 후 파라미터 명을 설정하면 나머지 파라미터가 배열 객체로 넘어옵니다.</p>
 
                         <pre><code>
     //ES5
@@ -517,8 +511,6 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
                         </code></pre>
 
                         <aside class="notes">
-                        arguments의 대체
-                        함수 파라미터에 일정하지 않은 값들을 넘기고자 할 경우에 유용
                         ES5에서 함수 파라미터를 임의의 수를 받기를 원한다면 반드시 특별 변수인 arguments를 사용해야 합니다.
                         </aside>
                     </section>
@@ -531,7 +523,7 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
 
                     <section>
                         <h2>... spread operator (펼침 연산자)</h2>
-                        <p style="text-align:left">spread 연산자는 여러 파라미터(함수호출), 여러 요소(배열 리터럴) 예상되는 곳에 각각의 요소 값을 전달 합니다.</p>
+                        <p style="text-align:left">펼침 연산자는 여러 파라미터, 여러 배열이 예상되는 곳에 각각의 요소 값을 전달 합니다.</p>
                         <pre><code>
     function myFunction(a, b) {
         return a + b;
@@ -595,8 +587,8 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
                         <h2>arrow function (화살표 함수)</h2>
                         <p>순수 함수로서의 기능만을 담당하기 위해 간소화한 함수</p>
                         <ul>
-                            <li>"=>" 좌측에는 parameter, 우측에는 return될 내용</li>
-                            <li>우측이 여러줄 일 경우 { ... }로 묶을 수 있습니다.</li>
+                            <li>"=>" 좌측에는 parameter, 우측에는 return될 내용.</li>
+                            <li>여러줄 일 경우 { ... }로 묶을 수 있습니다.</li>
                         </ul>
 
                         <pre><code>
@@ -618,18 +610,14 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
 
                         <aside class="notes">
                             화살표(arrow) 함수는 =>를 쓰는 표현식을 말하는데 function의 줄임 표현이다.
-                            한 줄일 경우는 {}을 사용하지 않고 자동 return 구문이 된다. 만일 여러 줄일 경우는 {} 으로 감싼다.
-                            화살표 함수에서 this는 해당 스코프의 this값과 같습니다.
-                            화살표 함수는 일반 function과는 달리 새로운 클로져(closure)를 형성하지 않아서 this의 의미가 더 직관적이다.
-                            const arr = [1, 2, 3];
-                            const squares = arr.map(x => x * x);
+                            한 줄일 경우는 {}을 사용하지 않고 자동 return 구문이 된다.
                         </aside>
                     </section>
 
 
                     <section>
                         <h2>함수 호출 패턴과 this 바인딩</h2>
-                        <p>Javascript 함수는 4가지 방식으로 호출될 수 있습니다.<br >그리고 함수 호출 패턴에 따라 this의 참조값이 달라집니다.</p>
+                        <p>Javascript 함수는 4가지 방식으로 호출.<br >그리고 함수 호출 패턴에 따라 this의 참조값이 달라집니다.</p>
                         <ul>
                             <li>메소드 호출 패턴</li>
                             <li>함수 호출 패턴</li>
@@ -639,14 +627,12 @@ b라는 변수가 선언이 되지도 않았는데 b변수를 이미 호출해�
 
                         <aside class="notes">
 자바스크립트의 함수는 호출될 때, 매개변수로 전달되는 인자값 이외에, arguments 객체와 this를 암묵적으로 전달 받는다.
-call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니다.
-두 메소드는 함수 호출 시 사용되어 지고, 첫 매개변수로 주인 객체(owner object)를 갖습니다.
                         </aside>
                     </section>
 
                     <section>
                         <h2>메소드 호출 패턴</h2>
-                        <p>메소드 내부의 this는 해당 메소드를 호출한 객체에 바인딩 됩니다.</p>
+                        <p>함수가 객체의 속성이면 메소드 내부의 this는<br> 해당 메소드를 호출한 객체에 바인딩 됩니다.</p>
                         <pre><code>
     var obj1 = {
         name: 'Lee',
@@ -672,7 +658,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
 
                     <section>
                         <h2>함수 호출 패턴</h2>
-                        <p>기본적으로 this는 전역객체(window)에 바인딩. <br>전역함수는 물론이고, 내부함수의 경우에도 this는 전역객체(window)에 바인딩 됩니다.</p>
+                        <p>일반 함수에서 this는 기본적으로 전역객체(window)에 바인딩. <br>전역함수는 물론이고, 내부함수의 경우도 this는 전역객체에 바인딩 됩니다.</p>
                         <pre><code>
     console.log(this === window); // true
 
@@ -695,7 +681,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                     </section>
 
                     <section>
-                        <p>또 한, 메소드의 내부함수일 경우에도 this는 전역객체에 바인딩 됩니다.</p>
+                        <p>그리고 객체 속성 메소드의 내부함수일 경우에도 this는 전역객체에 바인딩.</p>
                         <pre><code>
     var value = 1;
 
@@ -747,13 +733,13 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                     </section>
 
                     <section>
-                        <p>생성자 함수 역시, 내부함수에서 this는 전역객체에 바인딩 됩니다.</p>
+                        <p>생성자 함수의 내부함수 역시, this는 전역객체에 바인딩 됩니다.</p>
                         <pre><code>
     function Person() {
         this.age = 0;
 
         setInterval(function() {
-            //this는 전역객체 window를 가리키므로 동작하지 않습니다.
+            //this는 전역객체(window)를 가리키므로 동작하지 않습니다.
             this.age++;
         }, 1000);
     }
@@ -762,15 +748,13 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
-                        Arrow function 은 그저 축약을 위한것만이 아닙니다. this 바인딩과 밀접한 연관이 있습니다.
-                        Arrow function 에서의 this의 작동법은 이전과 다릅니다. 자바스크립트에서 각 function 은 정의 될때 마다,
-                        새로운 this를 가집니다. 하지만, Arrow 에서는 this를 context 영역에서 고유하게 가집니다.
+
                         </aside>
                     </section>
 
 
                     <section>
-                        <h3>내부함수의 this가 전역객체를 참조하는 것을 회피하는 방법</h3>
+                        <h3>내부함수의 this가 전역객체 참조를 회피하는 방법</h3>
                         <ul>
                             <li>일반적으로 this를 다른변수에 할당하는 방법</li>
                             <li>ES5 Function.prototype.bind()로 this를 바인딩</li>
@@ -795,7 +779,8 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
-
+call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니다.
+두 메소드는 함수 호출 시 사용되어 지고, 첫 매개변수로 주인 객체를 갖습니다.
                         </aside>
                     </section>
 
@@ -816,19 +801,20 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
+                        화살표 함수에서 this는 해당 스코프의 this값과 같습니다.
                         </aside>
                     </section>
 
 
                     <section>
                         <h2>화살표 함수와 일반 함수의 차이점</h2>
-                        <p>화살표 함수는 객체 생성자로 사용할 수 없습니다.<br>즉, new 연산자를 쓰지 못합니다.</p>
+                        <p>화살표 함수는 객체 생성자로 즉, new 연산자를 사용할 수 없습니다.</p>
                     </section>
 
                 </section>
 
                  <section>
-                    <section><h2>destructuring assignment</h2></section>
+                    <section><h2>destructure assignment</h2></section>
 
                     <section>
                         <h2>배열 해체 할당</h2>
@@ -856,11 +842,10 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
     console.log(c); //3
                         </code></pre>
                         <aside class="notes">
-                            <p>배열 혹은 객체를 해체하여 각각 변수에 할당한다.</p>
+                            배열 혹은 객체를 해체하여 각각 변수에 할당한다
                             단순희 배열 값을 하나씩 뽑아 a,b,c에 할당
                             배열 해체할당을 사용하면, 변수의 값에 쉽게 배열의 값을 할당할 수 있습니다.
                             할당문 좌변에는 할당할 변수를 배열 형식으로, 우변은 데이터를 가져올 배열을 놓습니다.
-                            이를 더 짧게 적으면, let [a, b, c] = [1, 2, 3]으로 표현할 수 있습니다.
                         </aside>
                     </section>
 
@@ -900,9 +885,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                             객체 프로퍼티 값을 다른 변수에 할당하려면 이 방법뿐이었습니다.
                             객체 해체 할당은 객체 프로퍼티 값을 추출해서 변수에 할당합니다.
                             좌변에는 리터럴 방식으로 할당할 변수를 열거하고, 우변은 객체를 놓은 뒤 전체를 ()로 감쌉니다.
-                            객체 프로퍼티명과 변수명은 반드시 같아야 합니다. 물론, 달리하는 방법도 있습니다.
-                            한 줄 표현 ()로 전체를 감싸지 않아도 된다.
-                            let {name: x, age: y} = {'name': '민호', 'age': 23};
+                            객체 프로퍼티명과 변수명은 반드시 같아야 합니다.
                         </aside>
                     </section>
                 </section>
@@ -969,7 +952,6 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
-위의 코드를 잘 보면 array.foo = 'bar';을 했지만, for-of 문에서는 bar이 뜨지 않습니다. 합니다.
                         </aside>
                     </section>
                 </section>
@@ -980,7 +962,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
 
                     <section>
                         <h2>Map</h2>
-                        <p>Map 객체는 Object와 유사,  Object와 달리 넣은 순서가 기억되고, <br>key가 문자열 뿐만 아니라 어떤 type도 가능합니다.</p>
+                        <p>Map 객체는 Object와 유사. Object와 차이점은 넣은 순서가 보장되고, <br>key가 문자열 뿐만 아니라 어떤 type도 가능합니다.</p>
                         <ul>
                             <li>key-value 쌍으로 이루어진 자료구조.</li>
                             <li>저정된 순서대로 각 요소들을 반복적으로 접근. (for...of)</li>
@@ -1017,19 +999,16 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
-                        Maps는 key-value 쌍으로 이루어진 자료구조이다.
-                        key들은 중복될 수 없으며, 하나의 키에 하나의 value만 올 수 있다.
                         map 객체에 값을 할당할 때에는 set 메소드를, 값을 추출할 때는 get 메소드를 사용하여 접근한다.
                         </aside>
                     </section>
 
                     <section>
                         <h2>Set</h2>
-                        <p>Set은 Array와 유사. 하지만 Array와는 달리 값이 중복될 수 없습니다.</p>
+                        <p>Set은 Array와 유사. Array와 차이점은 값이 중복될 수 없습니다.</p>
                         <ul>
                             <li>Set은 type 상관없이 유일한 값들의 집합.</li>
                             <li>입력된 순서에따라 저장된 요소를 반복처리. (for...of)</li>
-                            <li>중복된 값을 허용하지 않음.</li>
                         </ul>
                         <pre class="vertical"><code>
     let data = new Set();
@@ -1072,8 +1051,8 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         <h2>WeakMap, WeakSet</h2>
                         <ul>
                             <li>WeakMap은 객체만 키로 허용하고, WeakSet도 객체만 요소로 허용.</li>
-                            <li>내부에 저장된 객체를 참조하는 값이 없을 경우 가비지 콜력션 대상. (약한참조)</li>
-                            <li>WeakMap, WeakSet 객체는 열거할 수 없어서 크기를 알 수 없음.</li>
+                            <li>저장된 객체를 참조하는 값이 없을 경우 가비지 콜력션의 대상. (약한참조)</li>
+                            <li>키(key)들을 열거할 수 없어서 크기를 알 수 없음.</li>
                         </ul>
                         <p></p>
 
@@ -1084,7 +1063,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
 
     var weakMap = new WeakMap();
     weakMap.set(weakMapObj, 'zero');
-    weakMap.get(weakMapObj); //'zero'
+    weakMap.get(weakMapObj); //zero
 
                         </code></pre>
                         <pre class="vertical"><code>
@@ -1099,9 +1078,10 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
+                        map, set은 키로 어떤 타입도 가능했지만
                         WeakMap과 WeakSet을 사용하면 이러한 메모리 낭비를 막고 성능을 개선할 수 있다.
-                        WeakMap은 오브젝트만을 키로 허용하고 임의의 값을 허용한다. WeakSet도 오브젝트만을 요소로 허용한다. 또한, 객체에 대한 참조가 더이상 존재하지 않을경우 가비지 컬렉션의 대상이 된다. 즉, 언제든지 오브젝트가 GC의 대상이 될수 있기 때문에 WeakMap은 키들의 열거형을 지원하지 않는다.
-                        WeakMap과 WeakSet을 사용하면 이러한 메모리 낭비를 막고 성능을 개선할 수 있다.
+                        객체에 대한 참조가 더이상 존재하지 않을경우 가비지 컬렉션의 대상이 된다. 즉, 언제든지 오브젝트가 GC의 대상이 될수 있기 때문에 WeakMap은 키들의 열거형을 지원하지 않는다.
+
                         http://chanlee.github.io/2016/08/15/hello-es6-part-3/
                         </aside>
                     </section>
@@ -1116,8 +1096,8 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                     <section>
                         <h2>템플릿 문자열</h2>
                         <ul>
-                            <li>템플릿 문자열은 문자열을 쉽게 다루도록 도와주는 문법</li>
-                            <li>+ 연산자를 사용하지 않아도 간단한 방법으로 문자열에 새로운 문자열을 삽입 가능</li>
+                            <li>템플릿 문자열은 문자열을 쉽게 다루도록 도와주는 문법.</li>
+                            <li>+ 연산자를 사용하지 않아도 간단한 방법으로 새로운 문자열을 삽입 가능.</li>
                         </ul>
 
                         <pre><code>
@@ -1136,15 +1116,13 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
 
                         <aside class="notes">
                         템플릿 대입문은 큰 따옴표, 작은 따옴표 대신 역 따옴표(back-tick)로 묶고, 코드는 달러 기호와 중괄호로 묶습니다.
-                        템플릿 대입문(template substitution)이라 한다.
-                        템플릿 대입문에는 문자열뿐만아니라 모든 JavaScript 표현식이 사용될 수 있다.
                         </aside>
                     </section>
 
                     <section>
                         <h2>여러 줄 문자열</h2>
                         <ul>
-                            <li>‘ 또는 “ 같은 따옴표 문자 대신 ` 백틱(backtick)문자를 사용</li>
+                            <li>‘ 또는 “ 같은 따옴표 문자 대신 ` 백틱(backtick)문자를 사용.</li>
                             <li>줄바꿈과 들여쓰기 등 템플릿 문자열 속의 모든 white-space들은 있는 그대로 포함</li>
                         </ul>
 
@@ -1162,7 +1140,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
 
                         <aside class="notes">
                         일반 문자열과 비슷해 보이지만,
-                        템플릿 문자열에는 줄 바꿈 문자(\n)를 사용할 필요 없이 줄 바꿈이 포함됩니다.
+                        숫자키 1번 옆에
                         </aside>
                     </section>
 
@@ -1174,7 +1152,7 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
 
                     <section>
                         <h2>객체지향 자바스크립트</h2>
-                        <p>Javascript는 프로토타입 기반(prototype-based) 객체지향형 언어입니다..</p>
+                        <p>Javascript는 프로토타입 기반(prototype-based) 객체지향형 언어입니다.</p>
 
                         <pre><code>
     function SponsorWidget(name, description, url){
@@ -1193,25 +1171,9 @@ call()과 apply()는 미리 선언된 자바스크립트 함수 메소드입니�
                         </code></pre>
 
                         <aside class="notes">
-                        일반적인 javascript 캡슐화 방법은 생성자 함수를 사용합니다
-
-
                         Javascript는 프로토타입 기반(prototype-based) 객체지향형 언어다.
-
                         비록 다른 객체지향 언어들과의 차이점에 대한 논쟁들이 있긴 하지만, Javascript는 강력한 객체지향 프로그래밍 능력들을 지니고 있다.
-
-                        프로토타입 기반 프로그래밍은 클래스가 존재하지 않는 객체지향 프로그래밍 스타일로
-
-                        프로토타입 체인과 클로저 등으로 객체 지향 언어의 상속, 캡슐화(정보 은닉) 등의 개념을 구현할 수 있다.
-객체지향 프로그래밍(OOP)
-OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크립트가 OOP를 기본적으로 지원하지 않지만 OOP처럼 개발할 수 있다.
-
-기존의 C#이나 자바 같은 언어의 경우에는 Class에 작성한 정보를 바탕으로 인스턴스를 생성하여서 객체를 사용합니다.
-
-그런데 자바스크립트에서는 Class가 존재하지 않았습니다. 하지만 ES6부터 Class를 지원하기 시작합니다.
-
-기존에는 자바스크립트에서 객체지향 프로그래밍을 하기 위해서는 프로토타입을 이용해서 해당 객체를 복사 또는 필요에 따라 하나하나 특성들을 확장해 나가는 방식이었습니다.
-
+                        객체 지향 언어의 상속, 캡슐화(정보 은닉) 등의 개념을 구현할 수 있다.
                         </aside>
                     </section>
 
@@ -1226,10 +1188,8 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                         </code></pre>
 
                         <aside class="notes">
-                        그 동안 자바스크립트에 클래스가 없어서 다른 언어를 하셨던 분들은 자바스크립트의 객체에 대해 헷갈려했습니다. 하지만 이제 자바스크립트도 클래스가 있습니다!
-
+                        이제 자바스크립트도 클래스가 있습니다!
                         생성자를 만들고 상속을 다루는 훨씬 간결하고 단정한 구문
-                        생성자/프로토타입기반의 상속구문과 클래스 구문 비교
                         </aside>
                     </section>
 
@@ -1237,15 +1197,14 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                     <section>
                         <h2>생성자 함수 값 초기화</h2>
                          <ul>
-                            <li>constructor 메소드는 class로 생성된 객체를 생성하고 초기화 위한 특수한 메소드</li>
-                            <li>constructor 메소드는 클래스 내에 하나만 존재</li>
+                            <li>constructor는 객체의 초기화를 위해 사용되는 특수한 메소드</li>
+                            <li>클래스 내에 하나만 존재</li>
                         </ul>
 
                         <pre><code>
+    //new 연산자로 생성된 새로운 인스턴스가 있을 때 마다 실행
     class SponsorWidget {
-        //new 연산자로 생성된 새로운 인스턴스가 있을 때 마다 실행 됩니다.
         constructor(name, description, url){
-            //인스턴스 변수에 할당하면 다른 인스턴스 메소드에서 사용 가능
             this.name = name;
             this.description = description;
             this.url
@@ -1269,8 +1228,8 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                     <section>
                         <h2>클래스에서 인스턴스 변수 접근</h2>
                         <ul>
-                            <li>constructor 메소드에 설정된 인스턴스 변수는 클래스의 모든 인스턴스 메소드에서 <br>사용가능합니다.</li>
-                            <li>this를 이용해 인스턴스 변수 속성, 메소드에 접근</li>
+                            <li>constructor 메소드에 설정된 인스턴스 변수는 클래스의 모든 메소드에서 <br>사용가능합니다.</li>
+                            <li>this를 이용해 인스턴스 변수, 메소드에 접근 합니다.</li>
                         </ul>
                         <pre><code>
     class SponsorWidget {
@@ -1297,7 +1256,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>그런데 ES6의 클래스는..</h2>
-                        <p style="text-align:left">ES6의 Class가 새로운 객체지향 모델을 제공하는 것은 아닙니다. <br>기존 생성자 함수를 대신해 만들 수 있는 편리한 구문(Syntax sugar) 입니다.</p>
+                        <p>ES6의 클래스가 새로운 객체지향 모델을 제공하는 것은 아닙니다. <br>기존 생성자 함수를 대신해 사용할 수 있는 편리한 구문. (Syntax sugar)</p>
 
                         <pre><code>
     //Syntactic Sugar
@@ -1326,7 +1285,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                     <section>
                         <h2>extends 클래스 상속</h2>
                         <ul>
-                        <li>extends 키워드는 메소드와 속성을 상속받는 다른 class를 만드는데 사용됩니다.</li>
+                        <li>extends 키워드는 메소드와 속성을 상속받는 자식 Class를 만드는데 사용.</li>
                         <li>super는 부모클래스를 참조하기 위한 키워드 입니다.</li>
                         </ul>
                         <pre><code>
@@ -1341,13 +1300,12 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
     class SponsorWidget extends Widget { //Child Class
         constructor(name, description, url){
             super();
-            //파생 클래스에서 super() 함수가 먼저 호출되어야
-            //'this' 키워드를 사용가능 그렇지 않을 경우 참조오류 발생
+            //super() 함수가 먼저 호출되어야 'this' 키워드를 사용가능
             this.name = 'Square';
         }
         render(){
-            let parsedName = this.parse(this.name); //Parent메소드 상속
-            let css = this._buildCSS(this.baseCSS); //Parent속성 상속
+            let parsedName = this.parse(this.name); //Parent 메소드 상속
+            let css = this._buildCSS(this.baseCSS); //Parent 변수 상속
         }
     }
                         </code></pre>
@@ -1357,13 +1315,12 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                         함수의 상속 계층 구현은 쉬운일이 아닙니다.
 
                         클래스 constructor메소드에서 부모클래스 constructor 호출
-                        크래스 메소드 내부에서 부모클래스 정적/비정적 메소드를 참조
                         </aside>
                     </section>
 
                     <section>
-                        <h2>부모 클래스 메소드 재사용</h2>
-                        <p>Child class는 super 객체를 통해 Parent Class 메소드를 호출 할 수 있습니다.</p>
+                        <h3>부모 클래스 메소드 재선언 시</h3>
+                        <p>Child Class는 super 객체를 통해 Parent Class 메소드를 호출 할 수 있습니다.</p>
 
                         <pre><code>
     class Widget { //Parent Class
@@ -1381,7 +1338,6 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
         parse(){
             //Parent Class의 parse() 메소드 호출
             let parsedName = super.parse(this.name);
-            return `Sponsor: ${parsedName}`;
         }
         render(){
             //...
@@ -1398,16 +1354,11 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
 
                 <section>
-                    <section>
-                        <h2>modules - part I</h2>
-                         <aside class="notes">
-                            모듈러 프로그밍은 사용빈도가 높은 중요한 소프트웨어 디자인 기법
-                        </aside>
-                    </section>
+                    <section><h2>modules - part I</h2></section>
 
                     <section>
                         <h2>Global Namespace를 오염시키는..</h2>
-                        <p>코드 모듈화하는 일반적인 방법으로 전역변수를 사용합니다.<br> 이로인해 예기치 않은 문제점들이 발생할 가능성이 높아집니다.</p>
+                        <p>Javascript는 일반적으로 전역변수를 사용합니다.<br> 이로인해 예기치 않은 문제점들이 발생할 가능성이 높아집니다.</p>
 
                         <pre style="margin-bottom:0"><em class="file_name">index.html</em><code>
     &lt;!DOCTYPE&nbsp;html&gt;
@@ -1443,11 +1394,12 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                         <p>export 키워드를 사용해 모듈을 외부로 보낼 수 있습니다.</p>
 
                         <pre><em class="file_name">flash-message.js</em><code>
-    //flash messages를 표시하기 위한 모듈 생성합니다.
+    //messages를 표시하기 위한 모듈 생성합니다.
+    //default type export는 하나의 함수를 내보내는 방법입니다.
+
     export default function(message){
         alert(message);
     }
-    //default type export는 하나의 함수를 내보내는 방법입니다.
                         </code></pre>
 
                         <aside class="notes">
@@ -1464,9 +1416,10 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                         </ul>
 
                         <pre><em class="file_name">app.js</em><code>
+    //default export로 보내면 이름을 지정할 수 있습니다.
+
     import flashMessage from './flash-message'; //.js파일확장자는 생략
     flashMessage('Hello');
-    //default export로 보내면 이름을 지정할 수 있습니다.
                         </code></pre>
 
                         <pre><em class="file_name">flash-message.js</em><code>
@@ -1482,7 +1435,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>모듈 코드 실행</h2>
-                        <p style="text-align:left">모듈은 이전과 같이 script태그를 통해 가져옵니다. 그러나 더 이상 전역 네임스페이스가 오염되지않습니다.</p>
+                        <p>모듈은 이전과 같이 script태그를 통해 가져옵니다.<br> 그러나 더 이상 전역 네임스페이스가 오염되지 않습니다.</p>
 
                         <pre><em class="file_name">index.html</em><code>
     &lt;!DOCTYPE html&gt;
@@ -1507,11 +1460,10 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
         alert(message);
     }
 
+    //consoleMessage 함수는 모듈 외부에서 사용할 수 없습니다.
     function consoleMessage(message){
         console.log(message);
     }
-
-    //consoleMessage 함수는 모듈 외부에서 사용할 수 없습니다.
                         </code></pre>
 
                         <aside class="notes">
@@ -1755,7 +1707,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>상수 가져오기</h2>
-                        <p>이제 응용프로그램의 다른 파일에서도 상수를 가져와서 사용할 수 있습니다.</p>
+                        <p>이제 다른 파일에서도 상수를 가져와서 사용할 수 있습니다.</p>
                         <pre><em class="file_name">list-replies.js</em><code>
     import { MAX_REPLIES } from './constants';
 
@@ -1782,7 +1734,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>default export - 클래스 모듈 내보내기</h2>
-                        <p>클래스도 함수와 동일한 구문을 사용하여 모듈에서 내보낼 수 있습니다.</p>
+                        <p>클래스도 함수와 동일한 구문을 사용해 모듈에서 내보낼 수 있습니다.</p>
 
                         <pre><em class="file_name">flash-message.js</em><code>
     //default는 이 클래스를 가져 올 때 이름을 변경 할 수 있습니다.
@@ -1808,7 +1760,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>default export - 클래스 모듈 사용</h2>
-                        <p style="text-align:left">가져온 클래스는 import를 사용하여 변수에 할당되고, 새로운  인스턴스를 만드는 데 사용할 수 있습니다.</p>
+                        <p>import를 사용해 가져온 클래스는 변수에 할당되고,<br> 새로운  인스턴스를 만드는데 사용할 수 있습니다.</p>
 
                         <pre><em class="file_name">flash-message.js</em><code>
     export default class FlashMessage {
@@ -1834,7 +1786,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>named export - 클래스 모듈 내보내기</h2>
-                        <p style="text-align:left">클래스를 내보내는 또 다른 방법으로 <br>클래스를 먼저 정의한 다음, 중괄호 안에 클래스 이름과 함께 export를 사용합니다.</p>
+                        <p>클래스를 내보내는 또 다른 방법으로 <br>클래스를 먼저 정의한 다음, 중괄호 안에 클래스 이름과 함께 export를 사용합니다.</p>
 
                         <pre><em class="file_name">flash-message.js</em><code>
     class FlashMessage { //일반적인 클래스 선언
@@ -1861,7 +1813,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <section>
                         <h2>named export - 클래스 모듈 사용</h2>
-                        <p style="text-align:left">마찬가지로 named(명명된) export를 사용할 때는<br> 클래스 이름과 동일한 이름을 변수로 중괄호 안에 묶어야합니다.</p>
+                        <p>마찬가지로 named(명명된) export, import를 사용할 때는<br> 클래스 이름과 동일한 이름을 변수로 중괄호 안에 묶어야합니다.</p>
 
                         <pre><em class="file_name">flash-message.js</em><code>
     class FlashMessage {
@@ -1986,7 +1938,7 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                     <section>
                         <h2>generators</h2>
 
-                        <p style="text-align:left">Generator 함수는 실행 중간에서 값을 반환할 수 있고, 다른 작업을 처리한 후, 다시 <br>그 위치에서 코드를 시작할 수 있습니다.</p>
+                        <p>Generator 함수는 실행 중간에서 값을 반환할 수 있고, <br>다른 작업을 처리한 후, 다시 그 위치에서 코드를 시작할 수 있습니다.</p>
 
                         <ul>
                         <li>function* 으로 표기</li>
@@ -2014,8 +1966,6 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
                         Generator를 사용하면 함수의 처리를 일시 정지하거나 재개할 수 있다.
                         </aside>
 
-
-
                     </section>
                 </section>
 
@@ -2026,11 +1976,14 @@ OOP는 대상을 객체로 정하고 이를 다루는 개념이다. 자바스크
 
                     <p><a href="http://vanilla-js.com/" target="_blank">Vanilla JS</a></p>
 
-                    <p>기본의 충실함. 라이브러리와 프레임워크를 지나치게 의존해 기본을 무시하고 있는<br>개발자들에게 일침을 가하는 일종의 유머? 속임수 같은 것</p>
+                    <p>기본의 충실함.<br>라이브러리와 프레임워크를 지나치게 의존해 기본을 무시하고 있는<br>개발자들에게 일침을 가하는 일종의 유머? 속임수 같은 것.</p>
 
                     <aside class="notes">
                     프레임워크와 라이브러리의 사용이 잘못되었음을 지적하는 것이 아닌
-                    간단한 페이지를 만드는 데도 jQuery가 없으면 아무런 개발을 하지 못하거나 또는 React, Angular를 사용하면 모든것이 해결 될 것이라는 생각이 퍼지면서 극단적으로는 프론트 개발자라는 느낌보다는 jQuery개발자, Angular개발자, React개발자가 되어버리는게 아닌가 라는 생각이 듭니다.
+                    간단한 페이지를 만드는 데도 jQuery가 없으면 아무런 개발을 하지 못하거나
+                    React, Angular를 사용하면 모든것이 해결 될 것이라는 생각이 퍼지면서
+                    프론트 개발자라는 느낌보다는
+                    jQuery개발자, Angular개발자, React개발자가 되어버리는게 아닌가 라는 생각이 듭니다.
                     위와같은 현상의 반대 급부로 등장하는것이 바로 Vanilla JS 입니다.
                     </aside>
                 </section>
